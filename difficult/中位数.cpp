@@ -3,7 +3,8 @@
  **/
 
 #include <iostream>
-#include <vector> 
+#include <vector>
+#include <climits>
 using namespace std;
 
 class Solution {
