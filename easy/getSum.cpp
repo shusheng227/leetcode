@@ -1,5 +1,5 @@
 // Calculate the sum of two integers a and b, but you are not allowed to use the operator + and -.
-// 将数字当作二进制数看待，二进制异或为相加结果、想与为相加进位
+// 灏嗘暟瀛楀綋浣滀簩杩涘埗鏁扮湅寰咃紝浜岃繘鍒跺紓鎴栦负鐩稿姞缁撴灉銆佹兂涓庝负鐩稿姞杩涗綅
 #include <stdio.h> 
 
 int getSum(int a, int b){
@@ -10,11 +10,11 @@ int getSum(int a, int b){
         unsigned int temp = result1;
         result1 = result1^result2;
         result2 = (temp&result2)<<1;
-        printf("The %dth result：result1(%d),result2(%d)\n",
+        printf("The %dth result锛歳esult1(%d),result2(%d)\n",
 				count++,result1,result2);
     }
     return (int)result1;
-    // 更便捷的表达方式 
+    // 鏇翠究鎹风殑琛ㄨ揪鏂瑰紡 
 	// return b==0? a:getSum(a^b, (unsigned int)(a&b)<<1);
 }
 
