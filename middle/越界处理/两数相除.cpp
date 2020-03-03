@@ -23,6 +23,7 @@ public:
         long a = labs(dividend), b = labs(divisor);
         while(a >= b){
             long times = 1, temp = b; //times为被除数增大的倍数，temp为除数的中间变量
+            //使用乘法，计算除数乘n次才能大于被除数
             while(a >= (temp << 1)){
                 times <<= 1; //左移一位表示增大一倍
                 temp <<= 1;
