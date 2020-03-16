@@ -13,7 +13,7 @@ int main() {
         temp /=2;
     }*/
 
-    vector<int> v = {1,2,3,4,5};
+    //vector<int> v = {1,2,3,4,5};
     /* 查找元素位置
     vector <int>::iterator iElement = find(v.begin(), v.end(), 3);
     if( iElement != v.end() )	 {	      
@@ -27,11 +27,20 @@ int main() {
         cout << i << " ";    
     }*/
 
-    char s1[] = "ght";
+    /*char s1[] = "ght";
     char s2[] = "hjksd";
     int i = 20;
     int j = 30;
     char *s = 0;
     char *s3 = strcat(s1,s2);
-    cout << s3 << endl;
+    cout << s3 << endl;*/
+
+    /*vector<int> v(10);
+    v.push_back(1);
+    v.push_back(2);
+    for(auto s: v) {
+        cout << s << endl;
+    }*/
+    vector<int> v;
+    cout << v.size();
 }
