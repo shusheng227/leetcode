@@ -12,20 +12,39 @@
  * 输出描述：
  * 一个整数，r12 + r22 的最小值。
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <cmath>
+#include <bits/stdc++.h>
 using namespace std;
 
 typedef struct point {
     int x, y;
 } point;
 
-long fun(int n, point p1, point p2, vector<point> flower) {
-    
+long fun(long n, point p1, point p2, vector<point> flower) {
+    vector<pair<long, long> > dis(n);
+    int x1 = p1.x, y1 = p1.y;
+    int x2 = p2.x, y2 = p2.y;
+
+    for(int i = 0; i < n; ++i) {
+        dis[i]={pow(abs(flower[i].x-x1),2)+pow(abs(flower[i].y-y1),2),pow(abs(flower[i].x-x2),2)+pow(abs(flower[i].y-y2),2)};
+    }
+    sort(dis.begin(),dis.end(),[&](const pair<long,long>& a,const pair<long,long>& b){return a.first > b.first;});
+    long res = LONG_MAX,r2 = 0;
+    for(int i = 0;i < n;i++){
+        res = min(res,dis[i].first+r2);
+        r2 = max(dis[i].second,r2);
+    }
+    return min(res, r2);
 }
 
+int main() { 
+    int n;
+    point p1, p2, temp;
+    cin >> n >> p1.x >> p1.y >> p2.x >> p2.y;
 
+    vector<point> flower(n);
+    for(int i = 0; i < n; ++i) {
+        cin >> flower[i].x >> flower[i].y;
+    }
 
- 
+    cout << fun(n, p1, p2, flower);
+}
